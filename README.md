@@ -1,3 +1,3 @@
 # StoreAdminPanel
 store admin panel complete functionality with localstorage
-Goto : http://127.0.0.1:5500/Assignments/flipkartInventory/index.html
+Goto : https://creative-panda-b000d3.netlify.app/
