@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="common.css">
+</head>
+
+<body>
+    <div class="navbar-container"></div>
+    <div class="container">
+
+    </div>
+</body>
+
+</html>
+<script type="module">
+    import navbar from "./components/navbar.js"
+    import { checkLoggedInStatus } from "./script/logoutBtn.js"
+    // import { logout } from "./script/logoutBtn.js"
+    import appendData from './script/appendData.js'
+    let navbarItems = navbar()
+    document.querySelector(".navbar-container").innerHTML = navbarItems
+
+    checkLoggedInStatus()
+
+    let productList = JSON.parse(localStorage.getItem("productList")) || []
+    // let container = document.querySelector(".container")
+    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+    if (currentUser) {
+        appendData(productList, "tshirt")
+    }
+    // function appendData() {
+    //     productList.filter(element => element.category === 'tshirt').forEach(element => {
+    //         let elementDiv = document.createElement("div")
+
+    //         let image = document.createElement("img")
+    //         // image.id = "productImage"
+    //         image.src = element.image
+    //         console.log(image.src);
+
+    //         elementDiv.append(image)
+    //         container.append(elementDiv)
+    //     });
+    // }
+</script>
